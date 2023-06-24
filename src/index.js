@@ -1,46 +1,25 @@
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
-export const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
-};
+const gameEngine = (rule, game) => {
+  const userName = greeting();
 
-export const username = greeting();
+  for (let i = 1; i <= 3; i += 1) {
+    const [question, correctAnswer] = game();
 
-export const getRandomNumber = () => Math.round(Math.random() * 100);
+    console.log(rule);
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
-export const randomNumberOne = getRandomNumber();
-
-export const randomNumberTwo = getRandomNumber();
-
-export const ruleNotice = (rule) => console.log(rule);
-
-export const gameLoop = (question, gameRule) => {
-  console.log(`Question:${question}`);
-  const answer = readlineSync.question('Answer: ');
-  const correctAnswer = gameRule;
-  const output = [answer, correctAnswer];
-  return output;
-};
-
-export const gameCheck = () => {
-  if (gameLoop[0] === gameLoop[1]) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${gameLoop[0]}" is wrong answer ;(. Correct answer was "${gameLoop[1]}".`);
-  return false;
-};
-
-export const countRound = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const isCorrect = gameCheck();
-    if (!isCorrect) {
-      console.log(`Let's try again, ${username}!`);
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations, ${username}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
+
+export default gameEngine;
