@@ -1,23 +1,17 @@
-import * as brain from '../index.js';
+import gameEngine from '../index.js';
 
-const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const questionEven = brain.randomNumberOne;
+const getRandomNumber = () => Math.round(Math.random() * 100);
 
 const isEven = (num) => num % 2 === 0;
 
-const evenCheck = isEven(brain.randomNumberOne) ? 'yes' : 'no';
+const ruleEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const startEven = () => {
-  brain.greeting();
-
-  brain.ruleNotice(evenRule);
-
-  brain.gameLoop(questionEven, evenCheck);
-
-  brain.gameCheck();
-
-  brain.countRound();
+const gameEven = () => {
+  const question = getRandomNumber();
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
+
+const startEven = () => gameEngine(ruleEven, gameEven);
 
 export default startEven;
