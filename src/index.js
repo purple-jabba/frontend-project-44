@@ -4,17 +4,18 @@ import greeting from './cli.js';
 const gameEngine = (rule, game) => {
   const userName = greeting();
 
+  console.log(rule);
+
   for (let i = 1; i <= 3; i += 1) {
     const [question, correctAnswer] = game();
 
-    console.log(rule);
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer === correctAnswer) {
+    if (userAnswer.toLowerCase() === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
