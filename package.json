@@ -10,12 +10,12 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "type": "module",
-  "description": "[![Actions Status](https://github.com/purple-jabba/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/purple-jabba/frontend-project-44/actions)",
+  "description": "Fist project for Hexlet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Denis Karnafel",
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
