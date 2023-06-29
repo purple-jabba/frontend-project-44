@@ -12,8 +12,8 @@ const gcd = (n, m) => {
 };
 
 const gameGcd = () => {
-  const numberOne = getRandomNumber(100);
-  const numberTwo = getRandomNumber(100);
+  const numberOne = getRandomNumber();
+  const numberTwo = getRandomNumber();
 
   const question = `${numberOne} ${numberTwo}`;
   const answer = gcd(numberOne, numberTwo).toString();
