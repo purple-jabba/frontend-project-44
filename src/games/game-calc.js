@@ -1,17 +1,17 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../randomNum.js';
 
+const ruleCalc = 'What is the result of the expression?';
+
 const getRandomSymb = () => {
   const symbols = ['+', '-', '*'];
-  const symbIndex = getRandomNumber(symbols.length - 1);
+  const symbIndex = getRandomNumber(0, symbols.length - 1);
   return symbols[symbIndex];
 };
 
-const ruleCalc = 'What is the result of the expression?';
-
 const gameCalc = () => {
-  const numberOne = getRandomNumber(100);
-  const numberTwo = getRandomNumber(100);
+  const numberOne = getRandomNumber();
+  const numberTwo = getRandomNumber();
   const symbol = getRandomSymb();
 
   let calc = symbol;
