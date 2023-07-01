@@ -3,38 +3,32 @@ import getRandomNumber from '../utils/randomNum.js';
 
 const description = 'What number is missing in the progression?';
 
-const getRandomArray = () => {
-  const result = [];
-  let temp;
+const gameProg = () => {
+  const getRandomProg = (startPoint, step, length) => {
+    const result = [];
+    let temp;
+
+    result.push(startPoint);
+
+    for (let i = 0; i < length; i += 1) {
+      temp = result[i] + step;
+      result.push(temp);
+    }
+    return result;
+  };
 
   const firstNum = getRandomNumber(1, 50);
   const progStep = getRandomNumber(1, 10);
   const progLength = getRandomNumber(4, 9);
 
-  result.push(firstNum);
+  const generatedProg = getRandomProg(firstNum, progStep, progLength);
+  const selectedIndex = getRandomNumber(0, generatedProg.length - 1);
+  const hiddenIndex = [];
+  hiddenIndex.push(...generatedProg);
+  hiddenIndex[selectedIndex] = '..';
 
-  for (let i = 0; i < progLength; i += 1) {
-    temp = result[i] + progStep;
-    result.push(temp);
-  }
-  return result;
-};
-
-const gameProg = () => {
-  let hiddenNumber = '';
-
-  const generatedArr = getRandomArray();
-  const selectedIndex = getRandomNumber(0, generatedArr.length - 1);
-
-  for (let i = 0; i <= generatedArr.length - 1; i += 1) {
-    if (i === selectedIndex) {
-      hiddenNumber = `${hiddenNumber}.. `;
-    } else {
-      hiddenNumber = `${hiddenNumber}${generatedArr[i]} `;
-    }
-  }
-  const question = hiddenNumber;
-  const answer = generatedArr[selectedIndex].toString();
+  const question = hiddenIndex;
+  const answer = generatedProg[selectedIndex].toString();
 
   return [question, answer];
 };
