@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import startGame from '../index.js';
 import getRandomNumber from '../randomNum.js';
 
 const ruleCalc = 'What is the result of the expression?';
@@ -34,6 +34,6 @@ const gameCalc = () => {
   return [question, answer];
 };
 
-const startCalc = () => gameEngine(ruleCalc, gameCalc);
+const startCalc = () => startGame(ruleCalc, gameCalc);
 
 export default startCalc;

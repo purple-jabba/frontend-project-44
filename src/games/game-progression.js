@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import startGame from '../index.js';
 import getRandomNumber from '../randomNum.js';
 
 const ruleProg = 'What number is missing in the progression?';
@@ -39,6 +39,6 @@ const gameProg = () => {
   return [question, answer];
 };
 
-const startProg = () => gameEngine(ruleProg, gameProg);
+const startProg = () => startGame(ruleProg, gameProg);
 
 export default startProg;
