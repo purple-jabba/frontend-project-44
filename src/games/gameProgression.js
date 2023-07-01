@@ -1,7 +1,7 @@
 import startGame from '../index.js';
 import getRandomNumber from '../utils/randomNum.js';
 
-const ruleProg = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const getRandomArray = () => {
   const result = [];
@@ -39,6 +39,6 @@ const gameProg = () => {
   return [question, answer];
 };
 
-const startProg = () => startGame(ruleProg, gameProg);
+const startProg = () => startGame(description, gameProg);
 
 export default startProg;
