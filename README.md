@@ -1,3 +1,10 @@
+## Tests
+
+#### Code Climate Maintainability:
+[![Maintainability](https://api.codeclimate.com/v1/badges/e00316cf71748352a8ba/maintainability)](https://codeclimate.com/github/purple-jabba/frontend-project-44/maintainability)
+#### Hexlet tests and linter status:
+[![Actions Status](https://github.com/purple-jabba/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/purple-jabba/frontend-project-44/actions)
+
 # brain-games
 
 "Brain Games" is a set of five console games based on the popular mobile brain-pumping apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered completed. Incorrect answers end the game and prompt you to play it again. 
@@ -42,10 +49,3 @@ brain-prime
 [![asciicast](https://asciinema.org/a/6r6A6HCdawfdM64zJpvqnTczX.svg)](https://asciinema.org/a/6r6A6HCdawfdM64zJpvqnTczX)
 ### brain-prime
 [![asciicast](https://asciinema.org/a/ZpxoNRsmpAScsFVI8d3JEYlVT.svg)](https://asciinema.org/a/ZpxoNRsmpAScsFVI8d3JEYlVT)
-
-## Tests
-
-#### Code Climate Maintainability:
-[![Maintainability](https://api.codeclimate.com/v1/badges/e00316cf71748352a8ba/maintainability)](https://codeclimate.com/github/purple-jabba/frontend-project-44/maintainability)
-#### Hexlet tests and linter status:
-[![Actions Status](https://github.com/purple-jabba/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/purple-jabba/frontend-project-44/actions)
