@@ -10,8 +10,8 @@ const getRandomSymb = () => {
 };
 
 const gameCalc = () => {
-  const numberOne = getRandomNumber();
-  const numberTwo = getRandomNumber();
+  const numberOne = getRandomNumber(1, 100);
+  const numberTwo = getRandomNumber(1, 100);
   const symbol = getRandomSymb();
 
   let calc = symbol;
