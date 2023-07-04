@@ -1,22 +1,31 @@
 import startGame from '../index.js';
 import getRandomNumber from '../utils/randomNum.js';
-import calculate from '../utils/calc.js';
 
 const description = 'What is the result of the expression?';
 
+const calculate = (number1, number2, operator) => {
+  switch (operator) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      throw new Error(`Unknown operator ${operator}`);
+  }
+};
+
 const gameCalc = () => {
-  const getRandomSymb = () => {
-    const symbols = ['+', '-', '*'];
-    const symbIndex = getRandomNumber(0, symbols.length - 1);
-    return symbols[symbIndex];
-  };
+  const operators = ['+', '-', '*'];
+  const operatorIndex = getRandomNumber(0, operators.length - 1);
 
   const numberOne = getRandomNumber(1, 100);
   const numberTwo = getRandomNumber(1, 100);
-  const symbol = getRandomSymb();
+  const selectedOperator = operators[operatorIndex];
 
-  const question = `${numberOne} ${symbol} ${numberTwo}`;
-  const answer = calculate(numberOne, numberTwo, symbol).toString();
+  const question = `${numberOne} ${selectedOperator} ${numberTwo}`;
+  const answer = calculate(numberOne, numberTwo, selectedOperator).toString();
 
   return [question, answer];
 };
