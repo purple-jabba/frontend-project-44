@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import getRandomNumber from '../utils/randomNum.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const description = 'What is the result of the expression?';
 
@@ -16,7 +16,7 @@ const calculate = (number1, number2, operator) => {
   }
 };
 
-const gameCalc = () => {
+const generateRound = () => {
   const operators = ['+', '-', '*'];
   const operatorIndex = getRandomNumber(0, operators.length - 1);
 
@@ -30,6 +30,6 @@ const gameCalc = () => {
   return [question, answer];
 };
 
-const startCalc = () => startGame(description, gameCalc);
+const startCalc = () => startGame(description, generateRound);
 
 export default startCalc;

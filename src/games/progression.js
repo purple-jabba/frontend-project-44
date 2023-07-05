@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import getRandomNumber from '../utils/randomNum.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -16,7 +16,7 @@ const getRandomProgression = (startPoint, step, length) => {
   return result;
 };
 
-const gameProg = () => {
+const generateRound = () => {
   const firstNum = getRandomNumber(1, 50);
   const progressionStep = getRandomNumber(1, 10);
   const progressionLength = getRandomNumber(4, 9);
@@ -31,6 +31,6 @@ const gameProg = () => {
   return [question, answer];
 };
 
-const startProg = () => startGame(description, gameProg);
+const startProg = () => startGame(description, generateRound);
 
 export default startProg;
